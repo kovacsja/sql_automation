@@ -23,8 +23,7 @@ conn = pyodbc.connect(
 )
 
 #TODO: connection tesztelése (ping?)
-
-# conn = sqlalchemy.create_engine("mssql+pyodbc:///?odbc_connect=%s" % params_in)
+#TODO: sql_alchemy variáns connection készítése
 
 with pd.ExcelWriter("data.xlsx") as ew:
     for s in scripts:
