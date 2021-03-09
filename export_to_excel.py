@@ -2,6 +2,7 @@ import os
 import pyodbc
 import pandas as pd
 from getpass import getpass
+import tqdm #TODO: progressbar
 
 SCRIPT_DIR: str = "sql_to_excel/sripts"
 
@@ -20,6 +21,8 @@ scripts = [i for i in os.listdir(SCRIPT_DIR)]
 conn = pyodbc.connect(
     f"Driver={conn_params['driver']};SERVER={conn_params['server']};Database={conn_params['db']};UID={conn_params['me']};PWD={conn_params['passw']}"
 )
+
+#TODO: connection tesztelése (ping?)
 
 # conn = sqlalchemy.create_engine("mssql+pyodbc:///?odbc_connect=%s" % params_in)
 
