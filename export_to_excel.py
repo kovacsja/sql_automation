@@ -37,3 +37,5 @@ with pd.ExcelWriter("data.xlsx") as ew:
             pd.read_sql(f.read().replace("\n", " "), conn).to_excel(
                 ew, sheet_name=s[:-4], header=True
             )
+
+conn.close()
